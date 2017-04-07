@@ -121,7 +121,7 @@ struct Test {
 		
 		t = clock();
 
-		VEBTree<64ull> tree;
+		VEBTree<61ull> tree;
 
 		for (size_t i = 0; i < length; ++i) {
 			if (reqs[i].tp == 0) tree.add(reqs[i].value);
@@ -138,6 +138,8 @@ struct Test {
 		double d2 = dist2;
 		cerr << "VEBTree faster " << d1 / d2 << " times" << endl;
 		cerr << endl;
+
+		assert(ans1 == ans2);
 
 		if (false) {
 			filebuf bf;
